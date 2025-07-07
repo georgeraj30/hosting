@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personal Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+  <img src="/storage/emulated/0/DCIM/Snapchat/kani.jpg.jpg" width="350px" height="400px"> 
+    <h1>Personal Details</h1>
+    <form>
+        <label for="name">Name:Angayarkanni A</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="age">Age:19</label>
+        <input type="number" id="age" name="age"><br><br>
+        <label for="occupation">Occupation:job </label>
+        <input type="text" id="occupation" name="occupation"><br><br>
+        <label for="location">Location:Vadaponparappi</label>
+        <input type="text" id="location" name="location"><br><br>
+        <button>Submit</button>
+    </form>
+    <div id="details"></div>
+
+    <script>
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+            const occupation = document.getElementById('occupation').value;
+            const location = document.getElementById('location').value;
+            document.getElementById('details').innerHTML = `
+                <h2>Your Details:</h2>
+                <p>Name: ${name}</p>
+                <p>Age: ${age}</p>
+                <p>Occupation: ${occupation}</p>
+                <p>Location: ${location}</p>
+            `;
+        });
+    </script>
+</body>
+</html>
